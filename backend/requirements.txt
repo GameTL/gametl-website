@@ -1,0 +1,14 @@
+rich
+fastapi-limiter
+pydantic
+termcolor
+requests
+uvicorn
+markdown
+markdown-it-py
+PyYAML
+beautifulsoup4
+asyncio
+lxml
+python-dotenv
+aiohttp
