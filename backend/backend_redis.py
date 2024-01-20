@@ -12,8 +12,9 @@ from time import time
 import logging
 import traceback
 
-if not os.path.exists("log"):
-    os.makedirs("log")
+if not os.path.exists(f"{os.path.dirname(os.path.realpath(__file__))}/log"):
+    print()
+    os.makedirs(f"{os.path.dirname(os.path.realpath(__file__))}/log")
 # Configure logging
 x = logging.basicConfig(filename=f'{os.path.dirname(os.path.realpath(__file__))}/log/log.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
