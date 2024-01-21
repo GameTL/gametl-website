@@ -154,7 +154,7 @@ async def override_attrbuties_and_export_json(list_Projects: list[Project]) -> l
     start_time = time.perf_counter()
 
     # Load custom attributes from YAML file
-    with open("backend/custom_attrbuties.yaml", "r") as file:
+    with open(f"{os.path.dirname(os.path.realpath(__file__))}/custom_attrbuties.yaml", "r") as file:
         custom_attributes = yaml.safe_load(file)
 
     # Create a list of coroutine objects for projects that have a GitHub link
