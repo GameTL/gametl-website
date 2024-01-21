@@ -11,6 +11,10 @@ from rich.pretty import pprint
 from time import time
 import logging
 import traceback
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+
+
 
 if not os.path.exists(f"{os.path.dirname(os.path.realpath(__file__))}/log"):
     print()
@@ -22,7 +26,15 @@ x = logging.basicConfig(filename=f'{os.path.dirname(os.path.realpath(__file__))}
 logger = logging.getLogger('my_logger')
 
 load_dotenv()
+# Initialize the limiter
+limiter = Limiter(key_func=get_remote_address)
+
+# Initialize your FastAPI app
 app = FastAPI()
+
+# Add the rate limit exceeded handler
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 # # Redis configuration - use environment variables for security
 REDIS_HOST = os.getenv("REDIS_HOST")
@@ -82,6 +94,20 @@ cached_markdown_hash = get_hash(markdown_string)
 
 set_cached_data(MARKDOWN_CACHE_KEY, markdown_string)
 set_cached_data(SCRAPE_CACHE_KEY, data[0])
+
+@app.get("/api/rescrape_data")
+@limiter.limit("2/minute")
+def rescrape_data():
+    global cached_markdown_hash
+    # Condition 3: Re-scrape data
+    logger.info('Condition 3: Re-scrapping data...')
+    data = scrape_data()
+    # Hash the markdown and store in python for compare
+    cached_markdown_hash = get_hash(markdown_string)
+
+    set_cached_data(SCRAPE_CACHE_KEY, data[0])
+    logger.info('Condition 3: Re-scrapping data sucessful!')
+    return data[0]
 
 @app.get("/api/get-scraped-data")
 def get_scraped_data():

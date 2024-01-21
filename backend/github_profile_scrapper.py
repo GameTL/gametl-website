@@ -179,6 +179,8 @@ async def override_attrbuties_and_export_json(list_Projects: list[Project]) -> l
             project.description = description
 
     list_dicts = [proj.model_dump() for proj in list_Projects]
+    sorted_list = sorted(list_dicts, key=lambda x: x["year"], reverse=True)
+    pprint(sorted_list)
 
     # Write to a JSON file
     with open(f'{os.path.dirname(os.path.realpath(__file__))}/output.json', 'w') as file:
