@@ -1,0 +1,28 @@
+import Typography from "../../../src/components/common/Typography"
+
+const Quote = () => {
+  return (
+    <section className="relative mx-auto px-8 py-8 sm:px-16 lg:px-24 lg:py-16">
+      <Typography type="h1" className="text-center font-display text-xl font-medium md:text-2xl" custom={true}>
+        We Are EIC
+      </Typography>
+      <Typography
+        type="h2"
+        className="my-6 text-center font-display text-3xl font-medium md:text-4xl lg:text-5xl"
+        custom={true}
+      >
+        <span className="text-accentColor">E</span>ngineering <span className="text-accentColor">I</span>nnovator{" "}
+        <span className="text-accentColor">C</span>lub
+      </Typography>
+      <Typography
+        type="h3"
+        className="my-6 text-center font-display text-lg font-medium text-accentColor lg:text-3xl"
+        custom={true}
+      >
+        {`We're creating the best in building and integrating automations to robots.`}
+      </Typography>
+    </section>
+  )
+}
+
+export default Quote

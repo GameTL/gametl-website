@@ -4,8 +4,8 @@ import redis
 from fastapi import FastAPI, HTTPException
 import json
 import os
-from github_profile_scrapper import main as scrape_data
-from github_profile_scrapper import download_markdown_from_url
+from backend.scrapper.github_profile_scrapper import main as scrape_data
+from backend.scrapper.github_profile_scrapper import download_markdown_from_url
 from dotenv import load_dotenv
 from rich.pretty import pprint
 from time import time

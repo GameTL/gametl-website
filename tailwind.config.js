@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         accentColor: "#FF512F",
         backGroundColor: "#E7EBEF",
-        primaryColor: "#2A384D ",
+        textPrimaryColor: "#2A384D ",
       },
       fontWeight: {
         'normal': 400,
@@ -83,20 +83,21 @@ module.exports = {
       }),
     },
     screens: {
-      sm: "640px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1280px",
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px",
+      "2xl": "1546px"
     },
     fontFamily: { // rank to fallback fonts
       display: [
         // 'monospace',
-        // '-apple-system',
         // "Inter var",
         // "Noto Sans Thai",
         // 'SF Mono',
-        // 'SFMono-Regular',
         "SF Pro Display",
+        '-apple-system',
+        // 'SFMono-Regular',
         // "Montserrat",
         // "Sukhumvit Set",
         // "IBM Plex Sans Thai",

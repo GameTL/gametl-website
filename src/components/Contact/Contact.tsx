@@ -11,21 +11,19 @@ import {
 export default function Contact() {
   return (
     <section className="relative h-screen overflow-hidden sm:text-sm md:text-lg">
-      <div>
-        <LinkButton href="instagram.com/gametl02" size="lg">
+      <div className="flex items-center justify-center">
+        <LinkButton href="https://www.instagram.com/gametl02" size="lg" defaultMargin>
           Instagram | @gametl02
         </LinkButton>
-        <LinkButton href="linkedin.com/gametl" size="lg">
+        <LinkButton href="https://www.linkedin.com/gametl" size="lg" defaultMargin>
           LinkedIn | gametl
         </LinkButton>
         <LinkButton
           href="https://www.youtube.com/channel/UCQGAyCl6LsGukYzBTWf9rVw"
           size="lg"
+          defaultMargin
         >
           Youtube | GameTL
-        </LinkButton>
-        <LinkButton href="/instagram.com/gametl02" size="lg">
-          @gametl02
         </LinkButton>
       </div>
       <div className="relative z-10 m-10 text-center">
@@ -34,17 +32,15 @@ export default function Contact() {
           className="pt-20 font-display text-2xl"
           custom={true}
         >
-          robocup.cu@gmail.com
+          limsila.limsila@gmail.com
         </Typography>
-        <Typography
+        {/* <Typography
           type="caption"
           className="text-red my-4 flex justify-center text-center font-display text-[#D24E45] md:px-40 lg:px-96"
         >
-          Room 204, Building 1, Faculty of Engineering, Chulalongkorn
-          University, Phayatai Road, Bangkok, Bangkok 10330, TH
-        </Typography>
+        </Typography> */}
 
-        <div className="flex justify-center gap-4">
+        {/* <div className="flex justify-center gap-4">
           <Link href="https://www.facebook.com/eicchulalongkorn/" passHref>
             <a>
               <SocialFacebook className="h-10 w-10 text-black transition-colors hover:text-accentColor" />
@@ -60,10 +56,11 @@ export default function Contact() {
               <SocialYoutube className="h-10 w-10 text-black transition-colors hover:text-accentColor" />
             </a>
           </Link>
-        </div>
+        </div> */}
       </div>
 
-      <div className="absolute left-1/2 max-w-6xl -translate-x-1/2">
+
+      {/* <div className="absolute left-1/2 max-w-6xl -translate-x-1/2">
         <Image
           src="/assets/building-1.png"
           alt="EIC Building"
@@ -71,7 +68,7 @@ export default function Contact() {
           width={1870}
           height={1131}
         />
-      </div>
+      </div> */}
     </section>
   );
 }

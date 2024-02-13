@@ -1,30 +1,26 @@
 import Link from "next/link";
 import clsx from "clsx";
 import { ReactNode, useMemo } from "react";
-import {
-  SocialFacebook,
-  SocialInstagram,
-  SocialYoutube,
-  Live,
-} from "../materials/Socials";
 
 interface ButtonProps {
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl";
   href: string;
   className?: string;
   accentColor?: boolean;
   children: ReactNode;
   buttonLogo?: ReactNode | undefined;
   pillRound?: boolean;
+  defaultMargin?: boolean;
 }
 
-export function LinkButton({
+export default function LinkButton({
   size = "md",
   href,
   className,
   children,
   buttonLogo,
   pillRound = false,
+  defaultMargin = false,
   ...props
 }: ButtonProps) {
   const textSize = useMemo(() => {
@@ -35,6 +31,8 @@ export function LinkButton({
         return "text-lg";
       case "lg":
         return "text-xl";
+      case "xl":
+        return "text-2xl";
       default:
         return "text-base";
     }
@@ -44,20 +42,22 @@ export function LinkButton({
     <Link href={href} passHref>
       <a
         className={clsx(
-          pillRound ? "rounded-full" : "rounded-xl",
           "px-7 py-3",
           "max-h-16",
           "inline-flex items-center justify-center rounded-full text-center font-display",
-          "shadow-[0.625rem_0.625rem_0.875rem_0_rgb(200,200,200),-0.5rem_-0.5rem_1.125rem_0_rgb(255,255,255)]",
           "hover:text-accentColor",
-          "active:shadow-[inset_0rem_0.2rem_0.4rem_0_rgb(150,150,150)]",
-          "bg-backGroundColor text-primaryColor transition-all ",
+          // normal effect
+          "bg-backGroundColor transition-all duration-300",
+          "shadow-[0.625rem_0.625rem_0.875rem_0_rgb(200,200,200),-0.5rem_-0.5rem_1.125rem_0_rgb(255,255,255)]",
+          "hover:shadow-[0.625rem_0.625rem_0.875rem_0.5rem_rgb(200,200,200),-0.5rem_-0.5rem_1.125rem_0.5rem_rgb(255,255,255)]",
+          "text-textPrimaryColor",
+          pillRound ? "rounded-full" : "rounded-xl",
+          defaultMargin ? "m-10" : "",
           className,
           textSize
         )}
         {...props}
       >
-        {/* <{...buttonLogo} className={`w-6 h-6 mr-2`} /> */}
         {buttonLogo && <span className="mr-2 h-6 w-6">{buttonLogo}</span>}
 
         {children}

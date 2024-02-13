@@ -13,3 +13,6 @@ lxml
 python-dotenv
 aiohttp
 slowapi
+# image_coverter
+pillow
+Pillow-AVIF-Plugin

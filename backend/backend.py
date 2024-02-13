@@ -2,8 +2,8 @@ from fastapi import FastAPI, HTTPException
 import json
 import time
 import os
-from github_profile_scrapper import main as scrape_data
-from github_profile_scrapper import download_markdown_from_url
+from backend.scrapper.github_profile_scrapper import main as scrape_data
+from backend.scrapper.github_profile_scrapper import download_markdown_from_url
 app = FastAPI()
 
 cd = os.path.dirname(os.path.realpath(__file__))

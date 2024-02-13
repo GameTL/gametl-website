@@ -1,10 +1,10 @@
-import Typography from "@/components/common/Typography"
-import { Disclosure, Transition } from "@headlessui/react"
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid"
-import clsx from "clsx"
-import Link from "next/link"
-import { useRouter } from "next/router"
-import { useMemo } from "react"
+import Typography from "@/components/common/Typography";
+import { Disclosure, Transition } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
+import clsx from "clsx";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useMemo } from "react";
 
 const navigation = [
   { title: "Home", url: "/" },
@@ -12,33 +12,25 @@ const navigation = [
   { title: "Projects", url: "/projects" },
   { title: "Publications", url: "/publications" },
   { title: "About me & Contacts", url: "/contacts" },
-]
+];
 
 export default function Navbar() {
-  const router = useRouter()
+  const router = useRouter();
   const location = useMemo(() => {
-    return `/${router.pathname.split("/")[1]}`
-  }, [router])
+    return `/${router.pathname.split("/")[1]}`;
+  }, [router]);
 
   return (
     <Disclosure
       as="header"
-      className="bg-backGroundColor mb-4 fixed top-0 left-0 z-50 w-full px-6 transition-all duration-150 ease-out sm:relative sm:py-4  "
+      className="fixed left-0 top-0 z-50 mb-4 w-full bg-backGroundColor transition-all duration-150 ease-out sm:relative sm:py-4  "
     >
       {({ open }) => (
         <>
-          <nav className="sticky flex items-center justify-between py-4 px-6">
-            <Link href="/" passHref>
-              <a>
-                <Typography type="h2" className={clsx(
-                  "text-md text-primaryColor hover:text-accentColor rounded-xl ",
-                  "p-10 shadow-[0.625rem_0.625rem_0.875rem_0_rgb(200,200,200),-0.5rem_-0.5rem_1.125rem_0_rgb(255,255,255)]")}>
-                  GameTL Portfolio
-                </Typography>
-              </a>
-            </Link>
-
-            <ul className={clsx("hidden h-auto gap- md:flex ")}>
+          {/* <nav className="sticky flex items-center justify-center  px-6 py-4 md:mx-24 "> */}
+          <nav className="  sm:mx-16 md:mx-24 xl:mx-40 ">
+            {/* <ul className="hidden h-auto justify-between snap-center md:flex"> */}
+            <ul className="-ml-2 hidden items-start justify-between md:flex">
               {navigation.map((item) => (
                 <li key={item.url}>
                   <Link href={item.url} passHref>
@@ -47,13 +39,20 @@ export default function Navbar() {
                         type="span"
                         className={clsx(
                           "rounded-xl text-xl font-light ",
-                          // "w-48 h-16 px-6 py-4 bg-slate-200",
-                          // "flex h-full w-full items-center justify-center px-4 text-center", //text
-                          "flex w-auto h-auto px-6 py-4 items-center justify-center text-center", //text
-                          // location === item.url && "bg-accentColor shadow text-primaryColor transition-colors hover:bg-gray-800"
-                          location === item.url && clsx("p-10 shadow-[0.625rem_0.625rem_0.875rem_0_rgb(200,200,200),-0.5rem_-0.5rem_1.125rem_0_rgb(255,255,255)]",
-                          // " w-[8rem] h-[8rem] rounded-md bg-purple-7 py-4 [&>*:hover]:shadow-[0.625rem_0.625rem_0.875rem_0_rgb(225,226,228),-0.5rem_-0.5rem_1.125rem_0_rgb(255,255,255)][&>*>div]:w-16 [&>*>div]:h-16 [&>*>div]:rounded-full [&>*>div]:text-white [&>*>div]:flex [&>*>div]:items-center [&>*>div]:justify-center [&>*>div]:mx-auto [&>*>h2]:text-[0.8rem] [&>*>h2]:mt-4 [&>*>h2]:text-center"
-                          )
+                          "hover:text-accentColor",
+                          // normal effect without inactive bling
+                          "bg-backGroundColor transition-all duration-300",
+                          "hover:shadow-[0.625rem_0.625rem_0.875rem_0.5rem_rgb(200,200,200),-0.5rem_-0.5rem_1.125rem_0.5rem_rgb(255,255,255)]",
+
+                          "flex h-auto w-auto items-center justify-center px-6 py-4 text-center", //text
+                          // location === item.url && "bg-accentColor shadow text-textPrimaryColor transition-colors hover:bg-gray-800"
+                          location === item.url &&
+                            clsx(
+                              "hover:text-textPrimaryColor",
+                              "hover:shadow-[0.625rem_0.625rem_0.875rem_0_rgb(200,200,200),-0.5rem_-0.5rem_1.125rem_0_rgb(255,255,255)]",
+                              "p-10 shadow-[0.625rem_0.625rem_0.875rem_0_rgb(200,200,200),-0.5rem_-0.5rem_1.125rem_0_rgb(255,255,255)]"
+                              // " w-[8rem] h-[8rem] rounded-md bg-purple-7 py-4 [&>*:hover]:shadow-[0.625rem_0.625rem_0.875rem_0_rgb(225,226,228),-0.5rem_-0.5rem_1.125rem_0_rgb(255,255,255)][&>*>div]:w-16 [&>*>div]:h-16 [&>*>div]:rounded-full [&>*>div]:text-white [&>*>div]:flex [&>*>div]:items-center [&>*>div]:justify-center [&>*>div]:mx-auto [&>*>h2]:text-[0.8rem] [&>*>h2]:mt-4 [&>*>h2]:text-center"
+                            )
                         )}
                       >
                         {item.title}
@@ -92,14 +91,14 @@ export default function Navbar() {
           >
             <Disclosure.Panel as="div">
               {({ close }) => (
-                <div className="space-y-1 pt-2 pb-3">
+                <div className="space-y-1 pb-3 pt-2">
                   {navigation.map((item) => (
                     <Link href={item.url} key={item.title} passHref>
                       <Disclosure.Button
                         as="a"
                         href="#"
                         onClick={() => {
-                          close()
+                          close();
                         }}
                         className={clsx(
                           location === item.url ? "underline" : "no-underline",
@@ -117,5 +116,5 @@ export default function Navbar() {
         </>
       )}
     </Disclosure>
-  )
+  );
 }
