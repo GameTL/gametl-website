@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+
 import Typography from "../common/Typography";
 import LinkButton from "../common/LinkButton";
 import {

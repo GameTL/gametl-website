@@ -1,6 +1,3 @@
-import Project from '../components/Project/Project'; // Assuming Robots.js is in the same folder
-
-
 import { DescribeRoute } from "@/components/Meta/DescribeRoute"
 
 export default function Page() {
