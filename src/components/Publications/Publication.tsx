@@ -13,31 +13,31 @@ export function Publications() {
       <div className=" flex flex-wrap md:flex-nowrap">
         <div className="flex-auto">
           <Typography type="h2" className="">
-            Computer-vision-powered Automatic Waste Sorting Bin: a Machine
-            Learning-based Solution on Waste Management
+            {"Computer-vision-powered Automatic Waste Sorting Bin: a Machine \
+            Learning-based Solution on Waste Management"}
           </Typography>
           <Typography type="p" className="pb-8 pr-4">
-            The mainstream waste separation methods – recycle bins and manual
-            separation – are time consuming, prone to error, and human labor
-            intensive. Robots have demonstrated their superior efficiency at
-            repetitive task over human’s time to time again. This research
-            implements and evaluate a computer-vision-powered Automatic Waste
-            Sorting Bin, which is capable to classify the waste types in a short
-            time with high efficiency. Controlled and classified using a
-            Raspberry pi and a camera, the bin can detect the waste type and
-            drop it in the right bin accordingly. The dataset on which the model
-            is trained on is relatively small. An image of the waste is first
-            captured with the camera, and then analyzed using a YOLOv5 model.
-            Parameters that yield the optimal result are 150 epochs with a
-            YOLOv5l with an accuracy of 93.33 %. To improve the model’s
-            performance, we experimented with different epoch settings and
-            measured the results. The setup proposed with this paper provides an
-            automated solution to replace the mainstream methods of waste
-            separation. This paper provides a low-cost and flexible solution
-            that can be easily replicated and trained with a larger dataset to
-            acquire a better result. Future research may reference this paper as
-            a proof of concept and/or an implementation for a streamlined
-            solution.
+            {"The mainstream waste separation methods – recycle bins and manual \
+            separation – are time consuming, prone to error, and human labor \
+            intensive. Robots have demonstrated their superior efficiency at \
+            repetitive task over human's time to time again. This research \
+            implements and evaluate a computer-vision-powered Automatic Waste \
+            Sorting Bin, which is capable to classify the waste types in a short \
+            time with high efficiency. Controlled and classified using a \
+            Raspberry pi and a camera, the bin can detect the waste type and \
+            drop it in the right bin accordingly. The dataset on which the model \
+            is trained on is relatively small. An image of the waste is first \
+            captured with the camera, and then analyzed using a YOLOv5 model. \
+            Parameters that yield the optimal result are 150 epochs with a \
+            YOLOv5l with an accuracy of 93.33 %. To improve the model's \
+            performance, we experimented with different epoch settings and \
+            measured the results. The setup proposed with this paper provides an \
+            automated solution to replace the mainstream methods of waste \
+            separation. This paper provides a low-cost and flexible solution \
+            that can be easily replicated and trained with a larger dataset to \
+            acquire a better result. Future research may reference this paper as \
+            a proof of concept and/or an implementation for a streamlined \
+            solution."}
           </Typography>
 
           <LinkButton

@@ -16,7 +16,7 @@ const TechInformation = () => {
       )}>
         <div className="px-6 py-6">
           <Typography type="p" className="font-display  text-xl text-accentColor px-2" >
-          Website's Tech Stack
+          {"Website's Tech Stack"}
           </Typography>
           {/* Grey bar divider */}
           <hr className="h-px my-4 border-0 bg-slate-300"></hr>

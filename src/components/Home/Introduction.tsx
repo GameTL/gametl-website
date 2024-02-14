@@ -19,8 +19,8 @@ const Introduction = () => {
             Portfolio
           </Typography>
           <Typography type="p" className="my-4 text-sm md:text-xl">
-            Robotics and Artificial Intelligence Engineer from Chulalongkorn
-            University.
+            {"Robotics and Artificial Intelligence Engineer from Chulalongkorn \
+            University."}
           </Typography>
         </div>
 
