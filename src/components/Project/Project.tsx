@@ -1,5 +1,5 @@
 import jsonData from "../../../backend/scrapper/projects_scrapped.json";
-import { CardGrid } from "./CardGrid";
+import { CardGrid } from "../common/CardGrid";
 //TODO ADD STREAMLIT LOGO TO THE CARDS
 function Project() {
   return (
