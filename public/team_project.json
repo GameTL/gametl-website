@@ -1,0 +1,20 @@
+[
+    {
+        "title": "@EIC-NLP Architecting the NLP system for Walkie 3(Robot) as NLP Lead",
+        "year": 2023,
+        "imagePath": "assets/projects/place-holder-1.webp",
+        "githubLink": "https://github.com/EIC-NLP"
+    },
+    {
+        "title": "@EIC-CV2023 Optimizing code for TensorRT Acceleration",
+        "year": 2023,
+        "imagePath": "assets/projects/place-holder-1.webp",
+        "githubLink": "https://github.com/EIC-CV2023"
+    },
+    {
+        "title": "@robocup-eic/smach Writing Smach State and module-based real-time state generation",
+        "year": 2023,
+        "imagePath": "assets/projects/place-holder-1.webp",
+        "githubLink": "https://github.com/robocup-eic/smach"
+    }
+]
