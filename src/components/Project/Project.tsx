@@ -19,12 +19,12 @@ function Project() {
         <div className="container my-6 px-4 md:mx-auto">
           <CardGrid data={teamData} />
         </div>
-
         {/* Grey bar divider */}
+        <hr className="my-10 h-px border-0 bg-slate-400"></hr>
+
         <Typography type="h1" className="">
           {"Personal Project"}
         </Typography>
-        <hr className="my-10 h-px border-0 bg-slate-400"></hr>
 
         <div className="container mt-16 px-4 md:mx-auto">
           <CardGrid data={jsonData} />
